@@ -1,50 +1,50 @@
 
-# Análise de Internamento Hospitalar em Portugal
+# Analysis of Hospital Admissions in Portugal
 
-Projeto Final - Data Science & Analytics · CESAE Digital
-Pipeline: dados → exploração → limpeza e transformação → análise → dashboard.
+Final Project - Data Science & Analytics · CESAE Digital
+Pipeline: data → exploration → cleaning and transformation → analysis → dashboard.
 
 
-## 1. Contexto do projeto
+## 1. Project Context
 
-Análise de internamentos de Hospitais Portugueses, entre **janeiro de 2015 e março de 2026**.
-O objetivo é avaliar como varia a duração dos internamentos, a partir dos registos hospitalares das informações inerentes ao internamento.
+Analysis of Hospital Admissions in Portuguese Hospitals, from **January 2015 to March 2026.**
+The objective of this study is to evaluate variations in the length of hospital stays based on hospital records and the information associated with each admission.
 
-## 2. Pergunta de negócio
+## 2. Business Question
 
-**Como varia o tempo de internamento hospitalar em Portugal em função da região, periodo temporal, especialidade, diagnóstico, faixa etária e sexo?**
+**How does the length of hospital stay in Portugal vary across regions, over time, and according to medical specialty, diagnosis, age group, and sex?**
 
-User stories do dashboard:
-- *Como gestor de uma unidade hospitalar, quero ver a demora média de internamento da minha região comparada com as restantes regiões de saúde.*
-- *Como responsável de planeamento da ACSS, quero ver a evolução dos dias de internamento ao longo do tempo (2015–2026), para perceber o impacto de eventos como a pandemia na capacidade hospitalar.*
-- *Como responsável clínico, quero ver a demora média por diagnóstico, faixa etária, sexo e especialidade, para perceber que perfil de doente ocupa mais dias de internamento.*
+Dashboard user stories:
+- *As a hospital manager, I want to compare the average length of hospital stay in my health region compared with the other health regions.*
+- *As an ACSS planning officer, I want to analyse the evolution of hospital beddays over time (2015–2026) to understand the impact of events such as the COVID-19 pandemic on hospital capacity.*
+- *As a clinical manager, I want to analyse the average length of stay by diagnosis, age group, sex, and medical specialty, in order to identify the patient profiles associated with longer hospital stays.*
 
-## 3. Fonte dos dados
+## 3. Data Source
 
-**Ficheiro 1: Atividade de Internamento Hospitalar**
-- **Fonte:** ACSS Dados.gov.pt -  https://dados.gov.pt/pages/datasets/atividade-de-internamento-hospitalar-2
-- **Ficheiro:** `atividade-de-internamento-hospitalar_fich1.csv` 
-- **Dimensão:** 17617 linhas · 7 colunas (Período, Região, Instituição, Localização Geográfica, Tipo de Especialidade, Doentes Saídos, Dias de Internamento)
+**File 1: Hospitalisation Activity**
+- **Source:** ACSS Dados.gov.pt -  https://dados.gov.pt/pages/datasets/atividade-de-internamento-hospitalar-2
+- **File:** `atividade-de-internamento-hospitalar_fich1.csv` 
+- **Size:** 17617 lines · 7 columns (Period, Region, Institution, Geographical Location, Medical Specialty Type, Discharged Patients, Inpatient Days)
 
-**Ficheiro 2: Morbilidade e Mortalidade Hospitalar**
-- **Fonte:** SNS Transparência -  https://transparencia.sns.gov.pt/explore/assets/morbilidade_mortalidade_hospit/
-- **Ficheiro:** `morbilidade_mortalidade_hospit_fich2.csv` 
-- **Dimensão:** 524407 linhas · 11 colunas (Período, Região, Instituição, Código Capítulo Diagnóstico Principal, Descrição Capítulo Diagnóstico Principal, Faixa Etária, Sexo, Internamentos, Dias de Internamento, Ambulatório, Óbitos)
+**File 2: Hospital Morbidity and Mortality**
+- **Source:** SNS Transparência -  https://transparencia.sns.gov.pt/explore/assets/morbilidade_mortalidade_hospit/
+- **File:** `morbilidade_mortalidade_hospit_fich2.csv` 
+- **Size:** 524407 lines · 11 columns (Period, Region, Institution, Main Diagnosis Chapter Code, Main Diagnosis Chapter Description, Age Group, Sex, Hospital Admissions, Inpatient Days, Outpatient Care, Deaths)
 
-## 4. Tecnologias usadas
+## 4. Tecnologies used
 
-- **Linguagem de análise:** Python (pandas, matplotlib)
-- **Base de dados:** SQLite (consultas SQL)
+- **Data Analysis Language:** Python (pandas, matplotlib)
+- **Database:** SQLite (consultas SQL)
 - **Dashboard:** Power BI
-- **Controlo de versões:** Git + GitHub
+- **Versions Control:** Git + GitHub
 
-## 5. Estrutura do repositório
-
+## 5. Repository Structure
 ```
 data/
   raw/         
     atividade-de-internamento-hospitalar_fich1.csv
     morbilidade_mortalidade_hospit_fich2.csv
+
   processed/ 
     atividade_de_internamento_tratado.csv 
     internamento-hospital.db 
@@ -52,50 +52,68 @@ data/
     morbilidade-hospital.db 
 
 src/
-  1_preparar.ipynb   ler CSV -> exploração -> limpeza e transformação-> exportar
-  1_analise.ipynb   ler CSV -> Análise (SQL + Pandas + Matplotlib)
-  2_preparar.ipynb   ler CSV -> exploração -> limpeza e transformação-> exportar
-  1_analise.ipynb   ler CSV -> Análise (SQL + Pandas)
-reports/        relatorio.md
-dashboard/      ficheiro do Power BI (.pbix)
+  1_preparar.ipynb   Load CSV → Data exploration → Data cleaning and transformation → Export processed data
+
+  1_analise.ipynb   Load CSV → Data analysis (SQL + Pandas + Matplotlib)
+
+  2_preparar.ipynb   Load CSV → Data exploration → Data cleaning and transformation → Export processed data
+
+  2_analise.ipynb   Load CSV → Data analysis (SQL + Pandas)
+
+reports/  
+  relatorio.md
+
+dashboard/  
+  Power BI file (.pbix)
+
 README.md
+
 requirements.txt
 
 ```
+## 6. Project Execution
 
-## 6. Como executar o projeto
+To execute the project, follow the steps below:
 
-1. Instalar dependências: `pip install -r requirements.txt`
-2. Preparar os dados do ficheiro 1: `src/1_preparar.ipynb`
-3. Preparar os dados do ficheiro 2: `src/2_preparar.ipynb`
-4. Analisar o ficheiro 1: `src/1_analise.ipynb`
-5. Analisar o ficheiro 2: `src/2_analise.ipynb`
-6. Dashboard: abrir `data/processed/atividade_de_internamento_tratado.csv` e `data/processed/morbilidade_mortalidade_tratado.csv` no Power BI (abrir `dashboard/projeto.pbix`).
+1. Install the required dependencies using: `pip install -r requirements.txt`
+2. Prepare the dataset from the first file by running: `src/1_preparar.ipynb`
+3. Prepare the dataset from the second file by running: `src/2_preparar.ipynb`
+4. Perform the analysis of the first dataset using: `src/1_analise.ipynb`
+5. Perform the analysis of the second dataset using: `src/2_analise.ipynb`
+6. Visualisation dashboard: Import the processed datasets (`atividade_de_internamento_tratado.csv` and `morbilidade_mortalidade_tratado.csv`) from the `data/processed/` directory into Power BI. The final dashboard can be accessed by opening `dashboard/projeto.pbix`.
 
-## 7. Principais conclusões
+## 7. Key Findings
 
-- **Desigualdades regionais:** O Algarve apresenta a maior demora média de internamento (10 dias), seguido de LVT (9 dias). As restantes regiões registam 8 dias, evidenciando diferenças regionais na duração dos internamentos.
-- **Evolução temporal:** A demora média aumentou de 8 para 9 dias em 2018, mantendo-se estável até 2026. Os dados não evidenciam impacto direto da pandemia (COVID-19) na demora média.
-- **Especialidade:** A categoria "Outras Camas" apresenta a maior demora média, seguida da Especialidade Médica e Cirúrgica.
-- **Correlação doentes/dias:** O coeficiente de Pearson de 0,93 confirma uma relação linear muito forte entre o número de doentes saídos e o total de dias de internamento, reforçando a importância de usar a demora média nas comparações.
-- **Diagnóstico:** Os internamentos mais prolongados estão associados a transtornos mentais e de neurodesenvolvimento, seguidos de doenças infeciosas e parasitárias.
-- **Faixa etária:** Os doentes com 65 ou mais anos apresentam a maior demora média, sugerindo maior complexidade clínica e processos de recuperação mais prolongados nos idosos.
-- **Sexo:** Os doentes do sexo masculino registam uma maior duração média de internamento comparativamente ao sexo feminino.
+- **Regional inequalities:** The Algarve region presents the highest average length of hospital stay (10 days), followed by "Lisboa and Vale do Tejo" (LVT) (9 days). The remaining regions record an average of 8 days, highlighting regional differences in hospitalisation duration.
 
-## 8. Limitações do trabalho
+- **Temporal evolution:** The average length of stay increased from 8 to 9 days in 2018 and remained stable until 2026. The data do not indicate a direct impact of the COVID-19 pandemic on the average length of hospital stay.
 
-- Existem 111 unidades do Serviço Nacional de Saúde (informação do INE), e no projeto só são avaliadas 88 unidades, sendo o projeto correspondente a apenas 79% da informação da totalidade dos hospitais públicos;
-- Existem instituições com registos incompletos (28 registos de doentes saidos e 33 registos de dias de internamento, em falta);
-- O ficheiro 2 contempla apenas 43 dos 88 hospitais presentes no ficheiro 1, representando 49% das instituições analisadas no projeto e 39% da totalidade dos hospitais públicos do SNS. 
-A análise do perfil do doente está assim limitada a pouco menos de metade da rede hospitalar pública.
+- **Medical specialty:** The "Other Beds" category presents the highest average length of stay, followed by Medical and Surgical specialties.
+
+- **Relationship between discharged patients and inpatient days:** The Pearson correlation coefficient of 0.93 confirms a very strong linear relationship between the number of discharged patients and the total number of inpatient days, reinforcing the importance of considering average length of stay when comparing hospital activity.
+
+- **Diagnosis:** The longest hospital stays are associated with mental and neurodevelopmental disorders, followed by infectious and parasitic diseases.
+
+- **Age group:** Patients aged 65 years or older present the highest average length of stay, suggesting greater clinical complexity and longer recovery processes among older patients.
+
+- **Sex:** Male patients present a higher average length of hospital stay compared with female patients.
 
 
-## 9. Equipa e responsabilidades
+## 8. Project Limitations
 
-| Bárbara Alves | Aquisição de dados; Limpeza e transformação |
-| Inês Fernandes | Exploração de dados; Análise de dados |
-| Margarida Oliveira | Exploração de dados; Dashboard |
+- The Portuguese National Health Service (SNS) comprises 111 healthcare units (according to INE data), while this project analyses only 88 units. Therefore, the analysis covers approximately 79% of the available information regarding the total number of public hospitals.
 
+- Some institutions contain incomplete records, including 28 missing records for discharged patients and 33 missing records for inpatient days.
+
+- The second dataset includes only 43 of the 88 hospitals present in the first dataset, representing 49% of the institutions analysed in the project and 39% of the total number of public hospitals within the SNS. Consequently, the analysis of patient profiles is limited to slightly less than half of the public hospital network.
+
+## 9. Team and Responsibilities
+
+| Team Member | Responsibilities |
+
+| Bárbara Alves | Data acquisition; Data cleaning and transformation |
+| Inês Fernandes | Data exploration; Data analysis |
+| Margarida Oliveira | Data exploration; Dashboard development |
 
 ---
 
