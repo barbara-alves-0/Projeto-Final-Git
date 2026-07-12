@@ -1,8 +1,9 @@
 
 # Análise de Internamento Hospitalar em Portugal
 
-> Projeto Final — Data Science & Analytics · CESAE Digital
-> Pipelina: dados → exploração → limpeza e transformação → SQL → análise → dashboard.
+Projeto Final - Data Science & Analytics · CESAE Digital
+Pipeline: dados → exploração → limpeza e transformação → análise → dashboard.
+
 
 ## 1. Contexto do projeto
 
@@ -14,7 +15,7 @@ O objetivo é avaliar como varia a duração dos internamentos, a partir dos reg
 **Como varia o tempo de internamento hospitalar em Portugal em função da região, periodo temporal, especialidade, diagnóstico, faixa etária e sexo?**
 
 User stories do dashboard:
-- *Como gestor de uma unidade hospitalar, quero ver a demora média de internamento da minha região comparada com as restantes regiões de saúde, para identificar se o meu hospital está acima ou abaixo da média nacional.*
+- *Como gestor de uma unidade hospitalar, quero ver a demora média de internamento da minha região comparada com as restantes regiões de saúde.*
 - *Como responsável de planeamento da ACSS, quero ver a evolução dos dias de internamento ao longo do tempo (2015–2026), para perceber o impacto de eventos como a pandemia na capacidade hospitalar.*
 - *Como responsável clínico, quero ver a demora média por diagnóstico, faixa etária, sexo e especialidade, para perceber que perfil de doente ocupa mais dias de internamento.*
 
@@ -41,25 +42,35 @@ User stories do dashboard:
 
 ```
 data/
-  raw/         online_retail_II.xlsx     (descarregar — ver ponto 6; não vai para o Git)
-  processed/   retail_limpo.csv, retail.db (gerados pelo passo 1)
+  raw/         
+    atividade-de-internamento-hospitalar_fich1.csv
+    morbilidade_mortalidade_hospit_fich2.csv
+  processed/ 
+    atividade_de_internamento_tratado.csv 
+    internamento-hospital.db 
+    morbilidade_mortalidade_tratado.csv 
+    morbilidade-hospital.db 
+
 src/
-  1_preparar.py   ler Excel -> SQL -> limpeza -> exportar
-  2_analise.py    análise + gráficos
-reports/        gráficos (.png) + relatorio.md
+  1_preparar.ipynb   ler CSV -> exploração -> limpeza e transformação-> exportar
+  1_analise.ipynb   ler CSV -> Análise (SQL + Pandas + Matplotlib)
+  2_preparar.ipynb   ler CSV -> exploração -> limpeza e transformação-> exportar
+  1_analise.ipynb   ler CSV -> Análise (SQL + Pandas)
+reports/        relatorio.md
 dashboard/      ficheiro do Power BI (.pbix)
 README.md
 requirements.txt
-.gitignore
+
 ```
 
 ## 6. Como executar o projeto
 
-1. Descarregar os dados (Kaggle ou UCI) e colocar `online_retail_II.xlsx` em `data/raw/`.
-2. Instalar dependências: `pip install -r requirements.txt`
-3. Preparar os dados: `python src/1_preparar.py`
-4. Analisar: `python src/2_analise.py`
-5. Dashboard: abrir `data/processed/retail_limpo.csv` no Power BI (ver `reports/relatorio.md`).
+1. Instalar dependências: `pip install -r requirements.txt`
+2. Preparar os dados do ficheiro 1: `src/1_preparar.ipynb`
+3. Preparar os dados do ficheiro 2: `src/2_preparar.ipynb`
+4. Analisar o ficheiro 1: `src/1_analise.ipynb`
+5. Analisar o ficheiro 2: `src/2_analise.ipynb`
+6. Dashboard: abrir `data/processed/atividade_de_internamento_tratado.csv` e `data/processed/morbilidade_mortalidade_tratado.csv` no Power BI (ver `reports/relatorio.md`).
 
 ## 7. Principais conclusões
 
@@ -72,17 +83,22 @@ requirements.txt
 
 ## 8. Limitações do trabalho
 
+sexo indeterminado
+não tem todos os hospitais
+nem todos os hospitais têm registos completos - valores em falta por coluna
+diferentes numeros de hospitais nos dois ficheiros
+
+
 - ~243 mil linhas sem **Customer ID** — excluídas da análise por cliente (não da global).
 - Alguns "produtos" são na verdade ajustes/serviços (`Manual`, `DOTCOM POSTAGE`) — inflacionam o top de produtos; numa próxima iteração, separar serviços de produtos.
 - Devoluções e cancelamentos foram **removidos** para focar nas vendas; uma análise de devoluções seria trabalho futuro.
 
 ## 9. Equipa e responsabilidades
 
-| Elemento | Responsabilidades |
-|---|---|
-| _(exemplo)_ | Coordenação, preparação de dados |
-| _(exemplo)_ | Análise |
-| _(exemplo)_ | Dashboard e relatório |
+| Bárbara Alves | Aquisição de dados; Limpeza e transformação |
+| Inês Fernandes | Exploração de dados; Análise de dados |
+| Margarida Oliveira | Exploração de dados; Dashboard |
+
 
 ---
 
