@@ -70,28 +70,25 @@ requirements.txt
 3. Preparar os dados do ficheiro 2: `src/2_preparar.ipynb`
 4. Analisar o ficheiro 1: `src/1_analise.ipynb`
 5. Analisar o ficheiro 2: `src/2_analise.ipynb`
-6. Dashboard: abrir `data/processed/atividade_de_internamento_tratado.csv` e `data/processed/morbilidade_mortalidade_tratado.csv` no Power BI (ver `reports/relatorio.md`).
+6. Dashboard: abrir `data/processed/atividade_de_internamento_tratado.csv` e `data/processed/morbilidade_mortalidade_tratado.csv` no Power BI (abrir `dashboard/projeto.pbix`).
 
 ## 7. Principais conclusões
 
-*(Resultados reais obtidos com o dataset.)*
-
-- **Receita total:** ≈ **20,5 milhões GBP** em ~25 meses · **5.878** clientes · **4.917** produtos.
-- **Forte concentração no Reino Unido:** ≈ **85%** da receita. Os maiores mercados internacionais são **EIRE, Países Baixos, Alemanha e França** — onde está a maior oportunidade de crescimento.
-- **Sazonalidade pré-Natal muito marcada:** a receita dispara de **setembro a novembro** (máximo em **novembro de 2011, ≈ 1,5 M GBP**). Reforçar stock e campanhas nesses meses.
-- **Receita concentrada em poucos clientes e produtos:** os 10 maiores clientes representam uma fatia muito significativa → justifica um programa de fidelização.
+- **Desigualdades regionais:** O Algarve apresenta a maior demora média de internamento (10 dias), seguido de LVT (9 dias). As restantes regiões registam 8 dias, evidenciando diferenças regionais na duração dos internamentos.
+- **Evolução temporal:** A demora média aumentou de 8 para 9 dias em 2018, mantendo-se estável até 2026. Os dados não evidenciam impacto direto da pandemia (COVID-19) na demora média.
+- **Especialidade:** A categoria "Outras Camas" apresenta a maior demora média, seguida da Especialidade Médica e Cirúrgica.
+- **Correlação doentes/dias:** O coeficiente de Pearson de 0,93 confirma uma relação linear muito forte entre o número de doentes saídos e o total de dias de internamento, reforçando a importância de usar a demora média nas comparações.
+- **Diagnóstico:** Os internamentos mais prolongados estão associados a transtornos mentais e de neurodesenvolvimento, seguidos de doenças infeciosas e parasitárias.
+- **Faixa etária:** Os doentes com 65 ou mais anos apresentam a maior demora média, sugerindo maior complexidade clínica e processos de recuperação mais prolongados nos idosos.
+- **Sexo:** Os doentes do sexo masculino registam uma maior duração média de internamento comparativamente ao sexo feminino.
 
 ## 8. Limitações do trabalho
 
-sexo indeterminado
-não tem todos os hospitais
-nem todos os hospitais têm registos completos - valores em falta por coluna
-diferentes numeros de hospitais nos dois ficheiros
+- Existem 111 unidades do Serviço Nacional de Saúde (informação do INE), e no projeto só são avaliadas 88 unidades, sendo o projeto correspondente a apenas 79% da informação da totalidade dos hospitais públicos;
+- Existem instituições com registos incompletos (28 registos de doentes saidos e 33 registos de dias de internamento, em falta);
+- O ficheiro 2 contempla apenas 43 dos 88 hospitais presentes no ficheiro 1, representando 49% das instituições analisadas no projeto e 39% da totalidade dos hospitais públicos do SNS. 
+A análise do perfil do doente está assim limitada a pouco menos de metade da rede hospitalar pública.
 
-
-- ~243 mil linhas sem **Customer ID** — excluídas da análise por cliente (não da global).
-- Alguns "produtos" são na verdade ajustes/serviços (`Manual`, `DOTCOM POSTAGE`) — inflacionam o top de produtos; numa próxima iteração, separar serviços de produtos.
-- Devoluções e cancelamentos foram **removidos** para focar nas vendas; uma análise de devoluções seria trabalho futuro.
 
 ## 9. Equipa e responsabilidades
 
