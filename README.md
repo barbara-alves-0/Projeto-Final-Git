@@ -24,12 +24,12 @@ Dashboard user stories:
 **File 1: Hospitalisation Activity**
 - **Source:** ACSS Dados.gov.pt -  https://dados.gov.pt/pages/datasets/atividade-de-internamento-hospitalar-2
 - **File:** `atividade-de-internamento-hospitalar_fich1.csv` 
-- **Size:** 17617 lines · 7 columns (Period, Region, Institution, Geographical Location, Medical Specialty Type, Discharged Patients, Inpatient Days)
+- **Size:** 17617 lines · 7 columns (Periodo, Região, Instituição, Localização Geográfica, Tipo de Especialidade, Doentes saidos, Dias de Internamento)
 
 **File 2: Hospital Morbidity and Mortality**
 - **Source:** SNS Transparência -  https://transparencia.sns.gov.pt/explore/assets/morbilidade_mortalidade_hospit/
 - **File:** `morbilidade_mortalidade_hospit_fich2.csv` 
-- **Size:** 524407 lines · 11 columns (Period, Region, Institution, Main Diagnosis Chapter Code, Main Diagnosis Chapter Description, Age Group, Sex, Hospital Admissions, Inpatient Days, Outpatient Care, Deaths)
+- **Size:** 524407 lines · 11 columns (Período, Região, Instituição, Código Capítulo Diagnóstico Principal, Descrição Capítulo Diagnóstico Principal, Faixa Etária, Sexo, Internamentos, Dias de Internamento, Ambulatório,Óbitos)
 
 ## 4. Tecnologies used
 
@@ -107,9 +107,9 @@ To execute the project, follow the steps below:
 
 - The second dataset includes only 43 of the 88 hospitals present in the first dataset, representing 49% of the institutions analysed in the project and 39% of the total number of public hospitals within the SNS. Consequently, the analysis of patient profiles is limited to slightly less than half of the public hospital network.
 
-## 9. Team and Responsibilities
+- Both datasets don't include private institutions nor institutions from autonomous regions from Açores and Madeira.
 
-| Team Member | Responsibilities |
+## 9. Team and Responsibilities
 
 | Bárbara Alves | Data acquisition; Data cleaning and transformation |
 | Inês Fernandes | Data exploration; Data analysis |
