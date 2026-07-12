@@ -86,7 +86,7 @@ To execute the project, follow the steps below:
 
 - **Regional inequalities:** The Algarve region presents the highest average length of hospital stay (10 days), followed by "Lisboa and Vale do Tejo" (LVT) (9 days). The remaining regions record an average of 8 days, highlighting regional differences in hospitalisation duration.
 
-- **Temporal evolution:** The average length of stay increased from 8 to 9 days in 2018 and remained stable until 2026. The data do not indicate a direct impact of the COVID-19 pandemic on the average length of hospital stay.
+- **Temporal evolution:** The average length of stay gradually increased throughout the years. Although 2020 recorded the largest annual increase of the period, this variation cannot be exclusively attributed to the impact of the COVID-19 pandemic. The 2026 value is not comparable as it only covers 3 months of records.
 
 - **Medical specialty:** The "Other Beds" category presents the highest average length of stay, followed by Medical and Surgical specialties.
 
