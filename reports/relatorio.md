@@ -19,9 +19,7 @@ de Lisboa e Vale do Tejo (9 dias). As restantes regiões registam uma média de 
 
 
 ## 3. Evolução Temporal
-A demora média aumentou de 8 para 9 dias em 2018, mantendo-se estável até 2026. 
-Apesar de o período incluir a pandemia COVID-19, os dados não evidenciam uma alteração específica nesses anos, não sendo possível atribuir esta evolução ao impacto da pandemia.
-
+A demora média aumentou gradualmente ao longo dos anos avaliados. Apesar de 2020 registar o maior aumento anual do período, não é possível atribuir esta variação exclusivamente ao impacto da pandemia COVID-19. O valor de 2026 não é comparável pois contempla apenas 3 meses de registos.
 
 ## 4. Especialidade
 A categoria "Outras Camas" apresenta a maior demora média, seguida da Especialidade Médica e da Especialidade Cirúrgica. Este resultado pode ser justificado pela natureza dos internamentos que engloba (reabilitação, convalescença, cuidados paliativos, etc), que implicam estadias mais prolongadas.
