@@ -38,6 +38,13 @@ Dashboard user stories:
 - **Dashboard:** Power BI
 - **Versions Control:** Git + GitHub
 
+## 4.1 Use of Artificial Intelligence
+Claude AI (Anthropic) was used as support throughout the development of the project, namely for:
+- Clarifying technical concepts;
+- Discussing and validating methodological decisions;
+- Reviewing and simplifying Python/SQL code.
+All final analytical decisions, interpretation of results, and implementation were the responsibility of the project's authors.
+
 ## 5. Repository Structure
 ```
 data/
