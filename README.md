@@ -35,7 +35,7 @@ Dashboard user stories:
 ## 4. Tecnologies used
 
 - **Data Analysis Language:** Python (pandas, matplotlib)
-- **Database:** SQLite (consultas SQL)
+- **Database:** SQLite
 - **Dashboard:** Power BI
 - **Versions Control:** Git + GitHub
 
